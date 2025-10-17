@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0f1114;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: transparent;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo span {
+  color: #00d0ff;
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #00d0ff;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar {
+  background: #1b1d22;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  max-width: 500px;
+}
+
+.hero-text span {
+  color: #ff6600;
+}
+
+.hero-text p {
+  margin: 15px 0;
+  max-width: 400px;
+  color: #ccc;
+}
+
+.btn-buy {
+  background-color: #00d0ff;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.color-options {
+  margin-top: 20px;
+}
+
+.color {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.c1 { background: #ff6600; }
+.c2 { background: #00d0ff; }
+.c3 { background: #ff4444; }
+.c4 { background: #ffffff; }
+
+.hero-image img {
+  width: 480px;
+}
+
+/* COLLECTION */
+.collection {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.collection-card {
+  background: #1b1d22;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.collection-card:hover {
+  transform: translateY(-8px);
+}
+
+.collection-card img {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.collection-card button {
+  background: #00d0ff;
+  border: none;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.collection-card.big {
+  grid-column: span 2;
+}
+
+/* MENS */
+.mens {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.product-card {
+  background: #1b1d22;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-card img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.product-card button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #00d0ff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ABOUT */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 60px;
+}
+
+.about-text {
+  max-width: 500px;
+}
+
+.about-text h2 span {
+  color: #ff6600;
+}
+
+.btn-learn {
+  background: transparent;
+  border: 1px solid #00d0ff;
+  color: #00d0ff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.about-image img {
+  width: 400px;
+}
+/* Container for auth buttons */
+.auth-buttons {
+    display: flex;
+    gap: 12px; /* space between buttons */
+    align-items: center;
+}
+
+/* Common button styles */
+.auth-buttons .btn {
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Primary button - Register */
+.btn-primary {
+    background-color: #ff4757; /* bright accent color */
+    color: #fff;
+    border: 2px solid #ff4757;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #ff4757;
+    border: 2px solid #ff4757;
+}
+
+/* Outline button - Login */
+.btn-outline {
+    background-color: transparent;
+    color: #ff4757;
+    border: 2px solid #ff4757;
+}
+
+.btn-outline:hover {
+    background-color: #ff4757;
+    color: #fff;
+}
+
+/* Optional: Add subtle shadow on hover */
+.auth-buttons .btn:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
