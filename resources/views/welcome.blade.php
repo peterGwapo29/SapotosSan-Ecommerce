@@ -14,23 +14,56 @@
 
   <!-- HEADER -->
   <header class="header">
-    <div class="logo">SAPATOS<span>SAN</span></div>
-    <nav class="nav">
-      <a href="#">Home</a>
-      <a href="#">Men</a>
-      <a href="#">Women</a>
-      <a href="#">Collection</a>
-      <a href="#">Contact Us</a>
-    </nav>
-    <div class="icons">
-      <i class="fa-solid fa-cart-shopping"></i>
-    </div>
+  <div class="logo">SAPATOS<span>SAN</span></div>
+  <nav class="nav">
+    <a href="#">Home</a>
+    <a href="#">Men</a>
+    <a href="#">Women</a>
+    <a href="#">Collection</a>
+    <a href="#">Contact Us</a>
+  </nav>
+  <div class="icons">
+    <i class="fa-solid fa-cart-shopping"></i>
+  </div>
 
-    <div class="auth-buttons">
-      <a href="/login" class="btn btn-outline">Login</a>
-      <a href="/register" class="btn btn-primary">Register</a>
+  <!-- Auth Buttons -->
+  <div class="flex gap-3">
+    @guest
+      <!-- Show this when NOT logged in -->
+      <a href="{{ route('login') }}" 
+         class="px-5 py-2 border-2 border-pink-400 text-pink-400 rounded-full font-semibold text-sm hover:bg-pink-500 hover:text-white transition">
+          Login
+        </a>
+      @endguest
+
+      @auth
+        <!-- Greeting with Profile Image -->
+        <div class="flex items-center gap-2 cursor-pointer">
+          @if (Auth::user()->image)
+            <a href="{{ route('user.page') }}">
+              <img src="{{ asset('storage/' . Auth::user()->image) }}" 
+                  alt="Profile" 
+                  class="rounded-full object-cover border border-gray-300" 
+                  style="height: 40px; width: 40px;">
+            </a>
+          @endif
+          <span class="text-sm text-gray-600 hidden lg:inline">
+            Hello, <strong>{{ Auth::user()->name }}</strong>
+          </span>
+        </div>
+
+        <!-- Logout Button -->
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+          <button type="submit" 
+                  class="px-5 py-2 border-2 border-pink-400 text-pink-400 rounded-full font-semibold text-sm hover:bg-pink-500 hover:text-white transition">
+            Logout
+          </button>
+        </form>
+      @endauth
     </div>
   </header>
+
 
   <!-- HERO SECTION -->
   <section class="hero">
